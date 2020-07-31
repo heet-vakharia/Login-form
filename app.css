@@ -1,0 +1,123 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #212121;
+}
+ /* Main Container */
+/*  Sets Whole form center */
+.mainContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/* Sets styles for H1  */
+.heading {
+  text-align: center;
+  font-size: 4rem;
+  color: #f0f66e;
+}
+/* Form Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* global styles for input */
+.input {
+  display: block;
+  margin-bottom: 1rem;
+  background-color: #f0f66e;
+  border: none;
+  max-width: 600px;
+  width: 100%;
+  max-height: 500px;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 20px;
+  color: #212121;
+}
+/* Sets Input placeholder color black */
+.input::placeholder {
+  color: #212121;
+}
+/* Sets Input outline none background color to white when input is focus */
+.input:focus {
+  outline: none;
+  background-color: #fff;
+}
+/* Adding Animations to first input */
+#input1 {
+  animation: Popup 1.5s ease;
+}
+/* Adding Animations to Second Input */
+#input2 {
+  opacity: 0;
+  animation: PopupInvert 1.5s ease 0.75s;
+  animation-fill-mode: forwards;
+}
+/*  Styles for button */
+.submit {
+  cursor: pointer;
+  max-width: 200px;
+  max-height: 150px;
+  width: 100%;
+  padding: 1rem;
+  border: 3px solid #f0f66e;
+  background-color: #212121;
+  color: #f0f66e;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  animation: Btn 3s ease;
+}
+/*  Sets outline none when btn focuses */
+.submit:focus {
+  outline: none;
+}
+/* On btn hover */
+.submit:hover {
+  border: 3px solid #f0f66e;
+  background-color: #f0f66e;
+  color: #212121;
+}
+/* Animation for input 1 */
+@keyframes Popup {
+  from {
+    /* From opacity and scale 6 and rotate 180deg */
+    opacity: 0;
+    transform: scale(6) rotate(180deg);
+  }
+  to {
+    /* To opacity and scale to normal size and rotate 0 */
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+ /* Animation for input 2 */
+ /* Same as Animation of input 1 just rotate angle -180deg */
+@keyframes PopupInvert {
+  from {
+    opacity: 0;
+    transform: scale(6) rotate(-180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+ /* Animation for button */
+@keyframes Btn {
+  from {
+     /* from opacity 0 background color yellow and 50px down from original position */
+    opacity: 0;
+    background-color: #f0f66e;
+    transform: translateY(50px);
+  }
+  to {
+    /* to opacity to 1 ,position to original position and background color  */
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
